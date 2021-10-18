@@ -4,8 +4,6 @@
     <p class="links">
       <router-link to="/home">Home</router-link>
       <router-link to="/about">About</router-link>
-      <router-link :to="`/dynamic/${id}`">Dynamic</router-link>
-      <router-link :to="`/axios`">Axios</router-link>
       <router-link :to="`/element`">Element UI Plus</router-link>
     </p>
     <router-view v-slot="{ Component }">
@@ -29,7 +27,6 @@ import { useStore } from "vuex";
 const store = useStore();
 
 // eslint-disable-next-line no-bitwise
-const id = computed(() => ~~(Math.random() * 1000));
 const isEven = computed(() => store.getters["m1/isEven"]);
 const add = () => store.commit("m1/increase");
 const asyncAdd = () => store.dispatch("m1/increase");
